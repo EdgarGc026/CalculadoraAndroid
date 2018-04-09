@@ -2,6 +2,7 @@ package mx.programacionavanzada.examen1
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.Button
 import android.widget.TextView
 import java.util.*
@@ -25,7 +26,6 @@ class MainActivity : AppCompatActivity() {
 
 
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -35,10 +35,17 @@ class MainActivity : AppCompatActivity() {
 
 
         //TODO Realizar una función para el evento OnClickListener para el botón "CLEAR" que al presionar estableza el display en 0
-        //TODO Realizar una función para el evento OnClickListener para el botón "+/-" que al presionar cambie valore de negativos a positivos siempre que sea diferente a 0 (0.00, 0.00 etc)
-        //TODO Realizar una función para el evento OnClickListener para el botón "/"
-        //TODO Realizar una función para el evento OnClickListener para el botón "*"
 
+
+        //TODO Realizar una función para el evento OnClickListener para el botón "+/-" que al presionar cambie valore de negativos a positivos siempre que sea diferente a 0 (0.00, 0.00 etc)
+
+
+        //TODO Realizar una función para el evento OnClickListener para el botón "/"
+        val btn_divide = findViewById<Button>(R.id.btn_divide)
+        btn_divide.setOnClickListener({ View -> btn_operacionesListener('/')})
+        //TODO Realizar una función para el evento OnClickListener para el botón "*"
+        val btn_multiplication = findViewById<Button>(R.id.btn_multiplication)
+        btn_multiplication.setOnClickListener({View -> btn_operacionesListener('*')})
 
         val btn_plus = findViewById<Button>(R.id.btn_plus)
         btn_plus.setOnClickListener({ View -> btn_operacionesListener('+')})
@@ -47,15 +54,24 @@ class MainActivity : AppCompatActivity() {
         btn_minus.setOnClickListener({ View -> btn_operacionesListener('-')})
 
         //TODO Realizar una función para el evento OnClickListener para el botón "."
+        val btn_dot = findViewById<Button>(R.id.btn_dot)
+        btn_dot.setOnClickListener ({ View -> btn_operacionesListener( '.') })
+
         //TODO Realizar una función para el evento OnClickListener para el botón "="
+        val btn_equal = findViewById<Button>(R.id.btn_equal)
+        btn_equal.setOnClickListener({View -> btn_operacionesListener('=')})
 
         //TODO Realizar una función para el evento OnClickListener para el botón del número 0
-
+        val btn_zero = findViewById<Button>(R.id.btn_zero)
+        btn_zero.setOnClickListener({View -> btn_numerosListener('0')})
 
         val btn_one = findViewById<Button>(R.id.btn_one)
         btn_one.setOnClickListener({ View -> btn_numerosListener("1")})
 
         //TODO Realizar una función para el evento OnClickListener para el botón del número 2
+        val btn_two = findViewById<Button>(R.id.btn_two)
+        btn_two.setOnClickListener({ View -> btn_numerosListener("2")})
+        
         //TODO Realizar una función para el evento OnClickListener para el botón del número 3
         //TODO Realizar una función para el evento OnClickListener para el botón del número 4
         //TODO Realizar una función para el evento OnClickListener para el botón del número 5
@@ -123,6 +139,17 @@ class MainActivity : AppCompatActivity() {
                 valor2 = 0F
             }
             //TODO Agregar operación para multiplicar
+            '*'  ->{
+                valor1 = valor1 * valor2
+                texto!!.text = valor1.toString()
+
+                valor2 = 0F
+            }
+            '/' ->{
+                valor1 = valor1 / valor2
+                texto!!.text = valor1.toString()
+                valor2 = 0F
+            }
             //TODO Agregar operación para dividir (cuidado con dividir sobre 0)
         }
     }
