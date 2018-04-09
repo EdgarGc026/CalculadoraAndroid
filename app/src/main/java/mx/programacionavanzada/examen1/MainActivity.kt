@@ -35,7 +35,7 @@ class MainActivity : AppCompatActivity() {
 
 
         //TODO Realizar una función para el evento OnClickListener para el botón "CLEAR" que al presionar estableza el display en 0
-
+    
 
         //TODO Realizar una función para el evento OnClickListener para el botón "+/-" que al presionar cambie valore de negativos a positivos siempre que sea diferente a 0 (0.00, 0.00 etc)
 
@@ -71,13 +71,28 @@ class MainActivity : AppCompatActivity() {
         //TODO Realizar una función para el evento OnClickListener para el botón del número 2
         val btn_two = findViewById<Button>(R.id.btn_two)
         btn_two.setOnClickListener({ View -> btn_numerosListener("2")})
-        
+
         //TODO Realizar una función para el evento OnClickListener para el botón del número 3
+        val btn_three = findViewById<Button>(R.id.btn_three)
+        btn_three.setOnClickListener({View -> btn_numerosListener("3")})
+
         //TODO Realizar una función para el evento OnClickListener para el botón del número 4
+        val btn_four = findViewById<Button>(R.id.btn_four)
+        btn_four.setOnClickListener { View -> btn_numerosListener("4") }
         //TODO Realizar una función para el evento OnClickListener para el botón del número 5
+        val btn_five = findViewById<Button>(R.id.btn_five)
+        btn_five.setOnClickListener { View -> btn_numerosListener("5") }
+
         //TODO Realizar una función para el evento OnClickListener para el botón del número 6
+        val btn_six = findViewById<Button>(R.id.btn_six)
+        btn_six.setOnClickListener({View -> btn_numerosListener("6")})
         //TODO Realizar una función para el evento OnClickListener para el botón del número 7
+        val btn_seven = findViewById<Button>(R.id.btn_seven)
+        btn_seven.setOnClickListener ({ View -> btn_numerosListener("7") })
+
         //TODO Realizar una función para el evento OnClickListener para el botón del número 8
+        val btn_eight = findViewById<Button>(R.id.btn_eight)
+        btn_eight.setOnClickListener ({View -> btn_numerosListener("8")})
 
         //Función para el evento OnClickListener para el botón del número 9
         val btn_nine = findViewById<Button>(R.id.btn_nine)
@@ -145,12 +160,13 @@ class MainActivity : AppCompatActivity() {
 
                 valor2 = 0F
             }
+        //TODO Agregar operación para dividir (cuidado con dividir sobre 0)
             '/' ->{
                 valor1 = valor1 / valor2
                 texto!!.text = valor1.toString()
                 valor2 = 0F
             }
-            //TODO Agregar operación para dividir (cuidado con dividir sobre 0)
+
         }
     }
 
