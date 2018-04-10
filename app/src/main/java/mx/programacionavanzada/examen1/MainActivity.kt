@@ -35,7 +35,7 @@ class MainActivity : AppCompatActivity() {
 
 
         //TODO Realizar una función para el evento OnClickListener para el botón "CLEAR" que al presionar estableza el display en 0
-    
+
 
         //TODO Realizar una función para el evento OnClickListener para el botón "+/-" que al presionar cambie valore de negativos a positivos siempre que sea diferente a 0 (0.00, 0.00 etc)
 
